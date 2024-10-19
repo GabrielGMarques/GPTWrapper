@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "a648961f-7dec-4b8b-869f-dd8d08c7379c",
+		"name": "GPTWrapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1137660"
+	},
+	"item": [
+		{
+			"name": "Get Answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"prompt\": \"Panquecas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Question with image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Gabri/Downloads/NjhjOWlqODBjYng=.jpg"
+						},
+						{
+							"key": "prompt",
+							"value": "Can you describe this image?",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"question"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/question-with-image \\\r\n  -F \"image=@C:/Users/Gabri/Downloads/image.jpg\" \\\r\n  -F \"prompt=Can you describe this image?\""
+			},
+			"response": []
+		}
+	]
+}
